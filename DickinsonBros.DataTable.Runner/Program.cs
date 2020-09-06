@@ -51,6 +51,7 @@ namespace DickinsonBros.DataTable.Runner
                     Enum = EnumSample.Blue,
                     String = "SampleString"
                 };
+
                 var mixedSample = new List<MixedSample>
                 {
                     valueTypesSample
