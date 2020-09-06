@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,7 +17,7 @@
       * Handles nested interfaces, and anonymous enumerables
       * VaildData Types Include: Primitive, Value, String, and ByteArrays
       * Throws on invaild Enums
-      * Uses MemoryCache to store DataTable with columns
+      * Uses MemoryCache to reduce need for reflection on repeat usage
     </Description>
   </PropertyGroup>
 
