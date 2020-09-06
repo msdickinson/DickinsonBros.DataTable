@@ -10,7 +10,7 @@ Features
 * Methods: ToDataTable
 * Takes IEnumable of T and converts it into a DataTable
 * Handles nested interfaces, and anonymous enumerables
-* VaildData Types Include: Primitive, Value, String, and ByteArrays
+* Vaild Data Types Include: Primitive, Value, String, and ByteArrays
 * Throws on invaild Enums 
 * Uses MemoryCache to reduce need for reflection on repeat usage
 
