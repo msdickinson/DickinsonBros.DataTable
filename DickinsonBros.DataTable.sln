@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DickinsonBros.DataTable", "DickinsonBros.DataTable\DickinsonBros.DataTable.csproj", "{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Library", "1 Library", "{7C9C024D-2A97-4537-A426-EF4460D009F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{9D4BF40B-3EDA-4185-B5D3-636A49202F0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{2AF7D063-7A0A-4ACB-A38D-0369E809BB51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DickinsonBros.DataTable.Runner", "DickinsonBros.DataTable.Runner\DickinsonBros.DataTable.Runner.csproj", "{24C9D186-D764-4494-A0FB-EC375C2D0DBA}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DickinsonBros.DataTable.Database", "DickinsonBros.DataTable.Database\DickinsonBros.DataTable.Database.sqlproj", "{F529391F-887E-4272-8D83-B3712CFF1BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DickinsonBros.DataTable.Tests", "DickinsonBros.DataTable.Tests\DickinsonBros.DataTable.Tests.csproj", "{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C9D186-D764-4494-A0FB-EC375C2D0DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C9D186-D764-4494-A0FB-EC375C2D0DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C9D186-D764-4494-A0FB-EC375C2D0DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C9D186-D764-4494-A0FB-EC375C2D0DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F529391F-887E-4272-8D83-B3712CFF1BDA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4DF6C0F-592D-4EF9-BEB3-B1EEE0149C14} = {7C9C024D-2A97-4537-A426-EF4460D009F4}
+		{24C9D186-D764-4494-A0FB-EC375C2D0DBA} = {9D4BF40B-3EDA-4185-B5D3-636A49202F0A}
+		{F529391F-887E-4272-8D83-B3712CFF1BDA} = {9D4BF40B-3EDA-4185-B5D3-636A49202F0A}
+		{FBE76B36-3D37-46F2-ABDF-0DB9E82D21DA} = {7C9C024D-2A97-4537-A426-EF4460D009F4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FF86EEA-92BF-4A55-BD0D-E48D546177CC}
+	EndGlobalSection
+EndGlobal
