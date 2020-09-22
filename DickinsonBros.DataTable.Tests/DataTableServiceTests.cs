@@ -66,6 +66,7 @@ namespace DickinsonBros.DataTable.Tests
                     //Act
 
                     var observed = uutConcrete.ToDataTable(enumerable, expectedTableName);
+                    var observedTwo = uutConcrete.ToDataTable(enumerable, expectedTableName);
 
                     //Assert
 
@@ -454,6 +455,36 @@ namespace DickinsonBros.DataTable.Tests
                             EnumNullable = (SampleEnum)5
                         }
                     };
+
+                    string expectedTableName = "SampleTableName";
+                    var expectedAssemblyQualifiedName = typeof(EnumSample).AssemblyQualifiedName;
+
+                    var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
+
+                    var uut = serviceProvider.GetRequiredService<IDataTableService>();
+                    var uutConcrete = (DataTableService)uut;
+
+                    //Act
+
+                    var observed = uutConcrete.ToDataTable(enumerable, expectedTableName);
+
+                    await Task.CompletedTask.ConfigureAwait(false);
+                },
+                serviceCollection => ConfigureServices(serviceCollection)
+            );
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public async Task ToDataTable_NullEnumerable_Throws()
+        {
+            await RunDependencyInjectedTestAsync
+            (
+                async (serviceProvider) =>
+                {
+                    //Setup
+                    var enumerable = (List<EnumSample>)null;
 
                     string expectedTableName = "SampleTableName";
                     var expectedAssemblyQualifiedName = typeof(EnumSample).AssemblyQualifiedName;

@@ -1,5 +1,4 @@
 ﻿using DickinsonBros.DataTable.Runner.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,6 +8,8 @@ using System.IO;
 using System.Threading.Tasks;
 using DickinsonBros.DataTable.Abstractions;
 using DickinsonBros.DataTable.Extensions;
+using Microsoft.Extensions.Hosting;
+using DickinsonBros.DataTable.Runner.Services;
 
 namespace DickinsonBros.DataTable.Runner
 {
@@ -23,10 +24,11 @@ namespace DickinsonBros.DataTable.Runner
         {
             try
             {
-                using var applicationLifetime = new Services.ApplicationLifetime();
                 var services = InitializeDependencyInjection();
-                ConfigureServices(services, applicationLifetime);
+                ConfigureServices(services);
                 using var provider = services.BuildServiceProvider();
+
+                var hostApplicationLifetime = provider.GetService<IHostApplicationLifetime>();
                 var dataTableService = provider.GetRequiredService<IDataTableService>();
 
                 var valueTypesSample = new MixedSample
@@ -66,7 +68,7 @@ namespace DickinsonBros.DataTable.Runner
                 var mixedDataTable = dataTableService.ToDataTable(mixedSample, "MixedTable");
                 var anonymousDataTable = dataTableService.ToDataTable(anonymousSample, "AnonymousTable");
 
-                applicationLifetime.StopApplication();
+                hostApplicationLifetime.StopApplication();
 
                 await Task.CompletedTask.ConfigureAwait(false);
             }
@@ -82,7 +84,7 @@ namespace DickinsonBros.DataTable.Runner
              
         }
 
-        private void ConfigureServices(IServiceCollection services, Services.ApplicationLifetime applicationLifetime)
+        private void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
             services.AddLogging(cfg => cfg.AddConsole());
@@ -91,7 +93,7 @@ namespace DickinsonBros.DataTable.Runner
             services.AddMemoryCache();
 
             //Add ApplicationLifetime
-            services.AddSingleton<IApplicationLifetime>(applicationLifetime);
+            services.AddSingleton<IHostApplicationLifetime, HostApplicationLifetime>();
 
             //Add DataTable
             services.AddDataTableService();
