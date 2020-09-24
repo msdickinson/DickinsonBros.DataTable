@@ -9,6 +9,7 @@ namespace DickinsonBros.DataTable.Extensions
         public static IServiceCollection AddDataTableService(this IServiceCollection serviceCollection)
         {
             serviceCollection.TryAddSingleton<IDataTableService, DataTableService>();
+            serviceCollection.AddMemoryCache();
             return serviceCollection;
         }
     }
