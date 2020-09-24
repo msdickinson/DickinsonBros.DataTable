@@ -66,6 +66,7 @@ namespace DickinsonBros.DataTable.Runner
                 };
 
                 var mixedDataTable = dataTableService.ToDataTable(mixedSample, "MixedTable");
+                var mixedDataTableCatched = dataTableService.ToDataTable(mixedSample, "MixedTable");
                 var anonymousDataTable = dataTableService.ToDataTable(anonymousSample, "AnonymousTable");
 
                 hostApplicationLifetime.StopApplication();
@@ -88,14 +89,7 @@ namespace DickinsonBros.DataTable.Runner
         {
             services.AddOptions();
             services.AddLogging(cfg => cfg.AddConsole());
-
-            //Add MemoryCatche
-            services.AddMemoryCache();
-
-            //Add ApplicationLifetime
             services.AddSingleton<IHostApplicationLifetime, HostApplicationLifetime>();
-
-            //Add DataTable
             services.AddDataTableService();
         }
 
