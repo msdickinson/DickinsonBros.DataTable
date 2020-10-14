@@ -43,3 +43,5 @@ Requires: IMemoryCache
     var dataTableTwo = dataTableService.ToDataTable(anonymousSample, "myTable");
 
 ```
+
+[Sample Runner](https://github.com/msdickinson/DickinsonBros.DataTable/tree/master/DickinsonBros.DataTable.Runner)
